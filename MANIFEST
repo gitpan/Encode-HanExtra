@@ -3,6 +3,7 @@ HanExtra.pm
 MANIFEST			This list of files
 Makefile.PL
 README
+big5ext.ucm
 big5plus.ucm
 cccii.ucm
 euc-tw.ucm

@@ -13,7 +13,7 @@ use ExtUtils::MakeMaker;
 # Please edit the following to your taste!
 my $name = 'HanExtra';
 my %tables = (
-    HanExtra_t => [ qw(big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm) ],
+    HanExtra_t => [ qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm) ],
 );
 
 # add 'enc2xs -C' to the 'install' target

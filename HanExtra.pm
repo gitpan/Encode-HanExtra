@@ -1,14 +1,15 @@
 # $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #4 $ $Change: 3888 $ $DateTime: 2002/04/18 07:08:35 $
+# $Revision: #6 $ $Change: 3935 $ $DateTime: 2002/04/21 06:53:00 $
 
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
+Encode::define_alias( qr/\bbig5-?e(xt)?$/i	=> '"big5ext"' );
 Encode::define_alias( qr/\bbig5-?p(lus)?$/i	=> '"big5plus"' );
 Encode::define_alias( qr/\bbig5\+$/i		=> '"big5plus"' );
 Encode::define_alias( qr/\bcccii$/i		=> '"cccii"' );
@@ -26,8 +27,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.04 of Encode::HanExtra, released
-April 18, 2002.
+This document describes version 0.05 of Encode::HanExtra, released
+April 21, 2002.
 
 =head1 SYNOPSIS
 
@@ -62,7 +63,8 @@ This version includes the following encoding tables:
 
   Canonical   Alias			Description
   --------------------------------------------------------------------
-  big5plus    /\bbig5-?p(lus)?$/i	CMEX's extended Big5
+  big5ext     /\bbig5-?e(xt)?$/i	CMEX's Big5e Extension
+  big5plus    /\bbig5-?p(lus)?$/i	CMEX's Big5+ Extension
 	      /\bbig5\+$/i	
   cccii       /\bcccii$/i		Chinese Character Code for
 					Information Interchange
@@ -106,7 +108,8 @@ that the direct mapping via Unicode is lossy, and usually doesn't work
 at all.
 
 Please send me suggestions if you want to see the following encodings added:
-C<BIG5E>, C<BIG5-GCCS>, C<GB-GCCS>. Other suggestions are welcome, too.
+C<BIG5-1984> (superseded by C<BIG5-ETEN>), C<BIG5-GCCS> (superseded by
+C<BIG5-HKSCS>). Other suggestions are welcome, too.
 
 =head1 SEE ALSO
 

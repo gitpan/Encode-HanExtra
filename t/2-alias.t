@@ -3,13 +3,15 @@
 # $Revision: #1 $ $Change: 1 $ $DateTime: 2002/06/11 15:35:12 $
 
 use strict;
-use Test::More tests => 10;
+use Test::More tests => 12;
 use Encode;
 use Encode::HanExtra;
 
 print "# alias test\n";
 
 my %a2c = qw(
+             big51984   big5-1984
+             big5-84    big5-1984
 	     big5-ext	big5ext
 	     big5e	big5ext
 	     big5+      big5plus
@@ -23,8 +25,8 @@ my %a2c = qw(
 	     );
 
 foreach my $a (keys %a2c){	     
-    my $e = Encode::find_encoding($a);
-    my $n =  $e->name || $e->{name};
+    my $e = Encode::find_encoding($a) or die "Cannot find the $a encoding";
+    my $n = $e->name || $e->{name};
     is($n, $a2c{$a});
 }
 

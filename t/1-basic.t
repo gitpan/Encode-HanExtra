@@ -1,18 +1,22 @@
 #!/usr/bin/perl -w
-# $File: //member/autrijus/Encode-HanExtra/t/1-basic.t $ $Author: autrijus $
-# $Revision: #1 $ $Change: 1 $ $DateTime: 2002/06/11 15:35:12 $
 
 use strict;
-use Test::More tests => 8;
+use Test::More tests => 16;
 
 use_ok('Encode');
 use_ok('Encode::HanExtra');
 
-my $char = v20154; # 'Human' in chinese
+my $char = chr(20154); # 'Human' in Chinese
 
-is(Encode::decode(big5ext => '¤H'), $char);
-is(Encode::decode(big5plus => '¤H'), $char);
-is(Encode::decode(cccii => "\x21\x30\x64"), $char);
-is(Encode::decode('cns11643-1' => "D)"), $char);
-is(Encode::decode('euc-tw' => "\x8E\xA1\xC4\xA9"), $char);
-is(Encode::decode(gb18030 => 'ÈË'), $char);
+is_code('big5-1984'   => "\xA4\x48");
+is_code(big5ext       => "\xA4\x48");
+is_code(big5plus      => "\xA4\x48");
+is_code(cccii         => "\x21\x30\x64");
+is_code('cns11643-1'  => "\x44\x29");
+is_code('euc-tw'      => "\x8E\xA1\xC4\xA9");
+is_code(gb18030       => "\xC8\xCB");
+
+sub is_code {
+    is(Encode::decode($_[0] => $_[1]), $char, "$_[0] - decode");
+    is(Encode::encode($_[0] => $char), $_[1], "$_[0] - encode");
+}

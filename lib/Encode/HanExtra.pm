@@ -1,14 +1,12 @@
-# $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #4 $ $Change: 5948 $ $DateTime: 2003/05/18 21:09:04 $
-
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
+Encode::define_alias( qr/\b(?:tca-)?big5-?(?:19)?84?$/i	=> '"big5-1984"' );
 Encode::define_alias( qr/\b(?:cmex-)?big5-?e(?:xt)?$/i	=> '"big5ext"' );
 Encode::define_alias( qr/\b(?:cmex-)?big5-?p(?:lus)?$/i	=> '"big5plus"' );
 Encode::define_alias( qr/\b(?:cmex-)?big5\+$/i		=> '"big5plus"' );
@@ -36,8 +34,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.08 of Encode::HanExtra, released
-May 19, 2002.
+This document describes version 0.09 of Encode::HanExtra, released
+November 19, 2004.
 
 =head1 SYNOPSIS
 
@@ -54,14 +52,15 @@ May 19, 2002.
 =head1 DESCRIPTION
 
 Perl 5.7.3 and later ships with an adequate set of Chinese encodings,
-including the most used C<CP950>, C<CP936> (also known as C<GBK>),
-C<Big5>, C<Big5-HKSCS>, C<EUC-CN>, C<HZ>, and C<ISO-IR-165>.
+including the commonly used C<CP950>, C<CP936> (also known as C<GBK>),
+C<Big5> (alias for C<Big5-Eten>), C<Big5-HKSCS>, C<EUC-CN>, C<HZ>, and
+C<ISO-IR-165>.
 
 However, the numbers of Chinese encodings are staggering, and a complete
 coverage will easily increase the size of perl distribution by several
 megabytes; hence, this CPAN module tries to provide the rest of them.
 
-If you are using perl 5.8 or better, L<Encode::CN> and L<Encode::TW> will
+If you are using perl 5.8 or later, L<Encode::CN> and L<Encode::TW> will
 automatically load the extra encodings for you, so there's no need to
 explicitly write C<use Encode::HanExtra> if you are using one of them
 already.
@@ -72,6 +71,7 @@ This version includes the following encoding tables:
 
   Canonical   Alias				Description
   -----------------------------------------------------------------------------
+  big5-1984   /\b(tca-)?big5-?(19)?84$/i        TCA's original Big5-1984
   big5ext     /\b(cmex-)?big5-?e(xt)?$/i	CMEX's Big5e Extension
   big5plus    /\b(cmex-)?big5-?p(lus)?$/i	CMEX's Big5+ Extension
 	      /\b(cmex-)?big5\+$/i
@@ -96,6 +96,10 @@ Detailed descriptions are as follows:
 
 =over 4
 
+=item BIG5-1984
+
+This is the original Big5 encoding made by TCA Taiwan.
+
 =item BIG5PLUS
 
 This encoding, while not heavily used, is an attempt to bring all Taiwan's
@@ -104,7 +108,7 @@ the widely-deployed Big5 range, by CMEX Taiwan.
 
 =item BIG5EXT
 
-The CMEX's second (and less ambitious try) at unifying the most commonly
+The CMEX's second (and less ambitious) try at unifying the most commonly
 used characters not covered by Big5, while not polluting out of the 94x94
 arragement like BIG5PLUS did.
 
@@ -143,9 +147,9 @@ Traditional Chinese, please take a look at L<Encode::HanConvert>. Note
 that the direct mapping via Unicode is lossy, and usually doesn't work
 at all.
 
-Please send me suggestions if you want to see the following encodings added:
-C<BIG5-1984> (superseded by C<BIG5-ETEN>), C<BIG5-GCCS> (superseded by
-C<BIG5-HKSCS>). Other suggestions are welcome, too.
+Please send me suggestions if you want to see more encoding added, such
+as C<BIG5-GCCS> (superseded by C<BIG5-HKSCS>).  Other suggestions are welcome,
+too.
 
 =head1 SEE ALSO
 
@@ -160,13 +164,15 @@ Map for C<BIG5PLUS> is generated from the F<BIG52UCS.TXT> file,
 courtesy of CMEX Taiwan (Chinese Microcomputer Extended Foundation,
 L<http://www.cmex.org.tw/>).
 
+Map for C<BIG5-1984> is supplied by imacat.
+
 =head1 AUTHORS
 
 Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2002, 2003 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Copyright 2002, 2003, 2004 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
 
 This program is free software; you can redistribute it and/or 
 modify it under the same terms as Perl itself.

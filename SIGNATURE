@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.23.
+signed via the Module::Signature module, version 0.41.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,34 +14,35 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 2d0cccb25c3d08ed8a69542122391ef9c000702b Changes
-SHA1 92565f6b7ecc53bf59b254eb77a829c75f599e0c HanExtra.pm
-SHA1 56096ab7558d382e0b5a417c6b2eb4631420bb38 MANIFEST
+SHA1 05e8708705608f545cc870c203cfe1f2b408fd48 Changes
+SHA1 fc274e8f50b8a689ca743b930c45882612327ce9 MANIFEST
 SHA1 710ec3821e0b72d93e2bf8ef106999f685c6c1e8 META.yml
-SHA1 f243d27d21e4c40ec99a4711719f028ba46d7089 Makefile.PL
-SHA1 9a06bb8bcd557530130efd9aac9baa0efd7d69cf README
-SHA1 18444cd13aa88dac5e42f37a06d91f447d44fa34 big5ext.ucm
-SHA1 e656324f141bc0f7412cfd777d9833d24f6df52b big5plus.ucm
-SHA1 c44d23662def7dc098eba72fafe05bcc0c413395 cccii.ucm
-SHA1 7694afeb05a43701a683b3f98c579a42e39d9dce cns11643-1.ucm
-SHA1 21a63165e918f9367db55d318681fb56f69e040c cns11643-2.ucm
-SHA1 7e9b32ae6de8a2cda09bb68f140b345d35d7fb07 cns11643-3.ucm
-SHA1 6660e3f81f1ff3787c4c94390016e6541c4822bb cns11643-4.ucm
-SHA1 20c8a1a7e18c22d488b0cd76d093b8baab713c25 cns11643-5.ucm
-SHA1 fca2dadc71a040ca9adf9a6e35017b0fded4c464 cns11643-6.ucm
-SHA1 2eb1ee3e01bb8f38f346d1d1afa4b3d24dd1bed4 cns11643-7.ucm
-SHA1 dac24ebec7d1ee31987c3b09c098333c9c8c3459 cns11643-f.ucm
-SHA1 7872ff8ada7de9e3f7f2c819573b6a3dd5ece5a2 euc-tw.ucm
-SHA1 90f63140aa372b0518f32d893e84a437d7df061a gb18030.ucm
+SHA1 9344ec86c5e80bd4f85edc8329c6df66ff891e12 Makefile.PL
+SHA1 79d46c63ea57147b9b571dbd0f410ab95ccdf76b README
+SHA1 5568b814428bf069c901926794ec98a0f3e08f47 lib/Encode/HanExtra.pm
 SHA1 4686bb7a0f1f73089ac3f2b7264745430f925600 lib/Encode/TW/Unisys/SOSI1.pm
 SHA1 0450a0ef1d4897a0f8b29ec8a4f05fe955d6e8ab lib/Encode/TW/Unisys/SOSI2.pm
-SHA1 d730cd6b835d433e8d117419c41f0f70c3b39c1d t/1-basic.t
-SHA1 8901ee078d54590ec9b59e35268dd0835d2db4bc t/2-alias.t
-SHA1 d5104ae6a72992a96015f7bce9c22ae7437abf74 unisys.ucm
+SHA1 1a20d7e9976365a84485b5c51b4f459a18ea5d5f t/1-basic.t
+SHA1 7a25e52defeb1b514f1a3668bbc9b20935f5ad57 t/2-alias.t
+SHA1 643f62ce6c366afcb2f1790ec22a6bab5f5dd6bf ucm/big5-1984.ucm
+SHA1 18444cd13aa88dac5e42f37a06d91f447d44fa34 ucm/big5ext.ucm
+SHA1 e656324f141bc0f7412cfd777d9833d24f6df52b ucm/big5plus.ucm
+SHA1 624b0e4115df580aa5129e8dc61fc237fe3544a0 ucm/cccii.ucm
+SHA1 7694afeb05a43701a683b3f98c579a42e39d9dce ucm/cns11643-1.ucm
+SHA1 21a63165e918f9367db55d318681fb56f69e040c ucm/cns11643-2.ucm
+SHA1 7e9b32ae6de8a2cda09bb68f140b345d35d7fb07 ucm/cns11643-3.ucm
+SHA1 6660e3f81f1ff3787c4c94390016e6541c4822bb ucm/cns11643-4.ucm
+SHA1 20c8a1a7e18c22d488b0cd76d093b8baab713c25 ucm/cns11643-5.ucm
+SHA1 fca2dadc71a040ca9adf9a6e35017b0fded4c464 ucm/cns11643-6.ucm
+SHA1 2eb1ee3e01bb8f38f346d1d1afa4b3d24dd1bed4 ucm/cns11643-7.ucm
+SHA1 dac24ebec7d1ee31987c3b09c098333c9c8c3459 ucm/cns11643-f.ucm
+SHA1 7872ff8ada7de9e3f7f2c819573b6a3dd5ece5a2 ucm/euc-tw.ucm
+SHA1 5ef0a2bf6d3335d1faa26d277f9f19f49d99e27f ucm/gb18030.ucm
+SHA1 8b81ac96892adf5a1a25e9c14991e4ac80288dff ucm/unisys.ucm
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.2 (FreeBSD)
+Version: GnuPG v1.2.6 (FreeBSD)
 
-iD8DBQE+x/jotLPdNzw1AaARAm34AJoD8qg3cltmwp6KIfCkFSe37nIRwQCgvnIR
-VGsepOJ6LuFeY/NyBShcrus=
-=tMxT
+iD8DBQFBnN1VtLPdNzw1AaARAvbQAJ9yAJWp395jQ2i7TEPW0jyQmeSuYwCfX6lM
+qZH5V7kWVXo0L1Rm5yr4WdU=
+=LnA1
 -----END PGP SIGNATURE-----

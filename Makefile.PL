@@ -15,8 +15,10 @@ use ExtUtils::MakeMaker;
 my $name = 'HanExtra';
 my %tables = (
     HanExtra_t => [
-	qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm unisys.ucm),
-	map "cns11643-$_.ucm", (1 .. 7, 'f'),
+        map "ucm/$_.ucm", (
+            qw(big5-1984 big5ext big5plus cccii euc-tw gb18030 unisys),
+            map "cns11643-$_", (1 .. 7, 'f')
+        )
     ],
 );
 
@@ -74,7 +76,7 @@ WriteMakefile(
               INC		=> "-I$encode_h",
 #### END_OF_HEADER -- DO NOT EDIT THIS LINE BY HAND! ####
 	      NAME		=> 'Encode::'.$name,
-	      VERSION_FROM	=> "$name.pm",
+	      VERSION_FROM	=> "lib/Encode/$name.pm",
 	      OBJECT		=> '$(O_FILES)',
 	      'dist'		=> {
 		  COMPRESS	=> 'gzip -9f',

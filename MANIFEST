@@ -6,8 +6,6 @@ HanExtra.pm
 MANIFEST			This list of files
 Makefile.PL
 README
-bin/b2g.pl
-bin/g2b.pl
 compile
 encode.h
 t/1-basic.t

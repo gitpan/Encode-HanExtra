@@ -6,6 +6,14 @@ README
 big5ext.ucm
 big5plus.ucm
 cccii.ucm
+cns11643-1.ucm
+cns11643-2.ucm
+cns11643-3.ucm
+cns11643-4.ucm
+cns11643-5.ucm
+cns11643-6.ucm
+cns11643-7.ucm
+cns11643-f.ucm
 euc-tw.ucm
 gb18030.ucm
 t/1-basic.t

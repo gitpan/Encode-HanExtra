@@ -4,18 +4,26 @@
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
-Encode::define_alias( qr/\bbig5-?e(xt)?$/i	=> '"big5ext"' );
-Encode::define_alias( qr/\bbig5-?p(lus)?$/i	=> '"big5plus"' );
-Encode::define_alias( qr/\bbig5\+$/i		=> '"big5plus"' );
-Encode::define_alias( qr/\bcccii$/i		=> '"cccii"' );
+Encode::define_alias( qr/\b(?:cmex-)?big5-?e(?:xt)?$/i	=> '"big5ext"' );
+Encode::define_alias( qr/\b(?:cmex-)?big5-?p(?:lus)?$/i	=> '"big5plus"' );
+Encode::define_alias( qr/\b(?:cmex-)?big5\+$/i		=> '"big5plus"' );
+Encode::define_alias( qr/\b(?:ccag-)?cccii$/i		=> '"cccii"' );
 Encode::define_alias( qr/\beuc.*tw$/i		=> '"euc-tw"' );
 Encode::define_alias( qr/\btw.*euc$/i		=> '"euc-tw"' );
 Encode::define_alias( qr/\bGB[-_ ]?18030/i	=> '"gb18030"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]1/i	=> '"cns11643-1"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]2/i	=> '"cns11643-2"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]3/i	=> '"cns11643-3"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]4/i	=> '"cns11643-4"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]5/i	=> '"cns11643-5"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]6/i	=> '"cns11643-6"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]7/i	=> '"cns11643-7"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]f/i	=> '"cns11643-f"' );
 
 1;
 
@@ -27,8 +35,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.05 of Encode::HanExtra, released
-April 21, 2002.
+This document describes version 0.06 of Encode::HanExtra, released
+June 3, 2002.
 
 =head1 SYNOPSIS
 
@@ -61,16 +69,24 @@ already.
 
 This version includes the following encoding tables:
 
-  Canonical   Alias			Description
-  --------------------------------------------------------------------
-  big5ext     /\bbig5-?e(xt)?$/i	CMEX's Big5e Extension
-  big5plus    /\bbig5-?p(lus)?$/i	CMEX's Big5+ Extension
-	      /\bbig5\+$/i	
-  cccii       /\bcccii$/i		Chinese Character Code for
-					Information Interchange
-  euc-tw      /\beuc.*tw$/i		EUC (Extended Unix Character)
+  Canonical   Alias				Description
+  -----------------------------------------------------------------------------
+  big5ext     /\b(cmex-)?big5-?e(xt)?$/i	CMEX's Big5e Extension
+  big5plus    /\b(cmex-)?big5-?p(lus)?$/i	CMEX's Big5+ Extension
+	      /\b(cmex-)?big5\+$/i
+  cccii       /\b(ccag-)?cccii$/i		Chinese Character Code for
+						Information Interchange
+  cns11643-1  /\bCNS[-_ ]?11643[-_]1$/i		Taiwan's CNS map, plane 1
+  cns11643-2  /\bCNS[-_ ]?11643[-_]2$/i		Taiwan's CNS map, plane 2
+  cns11643-3  /\bCNS[-_ ]?11643[-_]3$/i		Taiwan's CNS map, plane 3
+  cns11643-4  /\bCNS[-_ ]?11643[-_]4$/i		Taiwan's CNS map, plane 4
+  cns11643-5  /\bCNS[-_ ]?11643[-_]5$/i		Taiwan's CNS map, plane 5
+  cns11643-6  /\bCNS[-_ ]?11643[-_]6$/i		Taiwan's CNS map, plane 6
+  cns11643-7  /\bCNS[-_ ]?11643[-_]7$/i		Taiwan's CNS map, plane 7
+  cns11643-f  /\bCNS[-_ ]?11643[-_]f$/i		Taiwan's CNS map, plane F
+  euc-tw      /\beuc.*tw$/i			EUC (Extended Unix Character)
 	      /\btw.*euc$/i
-  gb18030     /\bGB[-_ ]?18030$/i	GBK with Traditional Characters
+  gb18030     /\bGB[-_ ]?18030$/i		GBK with Traditional Characters
 
 Detailed descriptions are as follows:
 
@@ -80,17 +96,29 @@ Detailed descriptions are as follows:
 
 This encoding, while not heavily used, is an attempt to bring all Taiwan's
 conflicting internal-use encodings together, and fit it as an extension to
-the widely-deployed Big5 range.
+the widely-deployed Big5 range, by CMEX Taiwan.
+
+=item BIG5EXT
+
+The CMEX's second (and less ambitious try) at unifying the most commonly
+used characters not covered by Big5, while not polluting out of the 94x94
+arragement like BIG5PLUS did.
 
 =item CCCII
 
-The earliest Traditional Chinese encoding, a three-byte raw character map
-made in 1980, used mostly in library systems.
+The earliest (and most sophisticated) Traditional Chinese encoding, with a
+three-byte raw character map, made in 1980 by the Chinese Character Analysis
+Group (CCAG), used mostly in library systems.
 
 =item EUC-TW
 
 The EUC transport version of C<CNS11643> (planes 1-7), the comprehensive
 character set used by the Taiwan government.
+
+=item CNS11643-*
+
+The raw character map extracted from the Unihan database, including the
+plane F which wasn't included in C<EUC-TW>.
 
 =item GB18030
 

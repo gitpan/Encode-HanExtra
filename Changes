@@ -1,4 +1,9 @@
 ____________________________________________________________________________
+[  3935] By: autrijus                              on 2002/06/03  18:23:39
+        Log: * 0.06.
+	     * Added CNS11643-* from UniHan.
+	     * Added proper aliases to satisfy Li18nux conformance.
+____________________________________________________________________________
 [  3935] By: autrijus                              on 2002/04/21  06:53:00
         Log: * err, I meant 0.05.
 	   ! HanExtra.pm

@@ -3,7 +3,7 @@
 # $Revision: #3 $ $Change: 3933 $ $DateTime: 2002/04/21 06:51:52 $
 
 use strict;
-use Test::More tests => 8;
+use Test::More tests => 10;
 use Encode;
 use Encode::HanExtra;
 
@@ -15,6 +15,8 @@ my %a2c = qw(
 	     big5+      big5plus
 	     big5p      big5plus
 	     big5-plus  big5plus
+	     cmex-big5e	big5ext
+	     ccag-cccii	cccii
 	     zh_TW.euc	euc-tw
 	     x-euc-tw   euc-tw
 	     gb-18030	gb18030

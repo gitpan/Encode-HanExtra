@@ -8,12 +8,16 @@
 #
 use 5.007003;
 use strict;
+use Config;
 use ExtUtils::MakeMaker;
 
 # Please edit the following to your taste!
 my $name = 'HanExtra';
 my %tables = (
-    HanExtra_t => [ qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm) ],
+    HanExtra_t => [
+	qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm),
+	map "cns11643-$_.ucm", (1 .. 7, 'f'),
+    ],
 );
 
 # add 'enc2xs -C' to the 'install' target
@@ -29,14 +33,14 @@ END {
 }
 
 #### DO NOT EDIT BEYOND THIS POINT!
-
 require File::Spec;
 my ($enc2xs, $encode_h) = ();
 PATHLOOP:
-for my $d (split /:/, $ENV{PATH}){
+for my $d (@Config{qw/bin sitebin vendorbin/}, 
+	   (split /$Config{path_sep}/o, $ENV{PATH})){
     for my $f (qw/enc2xs enc2xs5.7.3/){
-	my $path = File::Spec->catfile($d, $f);
-	-x $path and $enc2xs = $path and last PATHLOOP;
+        my $path = File::Spec->catfile($d, $f);
+        -r $path and $enc2xs = $path and last PATHLOOP;
     }
 }
 $enc2xs or die "enc2xs not found!";
@@ -54,6 +58,7 @@ print "encode.h is at $encode_h\n";
 
 WriteMakefile(
               INC		=> "-I$encode_h",
+#### END_OF_HEADER -- DO NOT EDIT THIS LINE BY HAND! ####
 	      NAME		=> 'Encode::'.$name,
 	      VERSION_FROM	=> "$name.pm",
 	      OBJECT		=> '$(O_FILES)',
@@ -65,7 +70,7 @@ WriteMakefile(
 	      MAN3PODS	=> {},
 	      PREREQ_PM => {
 			    'Encode'     => "1.41",
-			   },
+                           },
 	      # OS 390 winges about line numbers > 64K ???
 	      XSOPT => '-nolinenumbers',
 	      );
@@ -86,6 +91,9 @@ sub post_initialize
     $self->{'O_FILES'} = [sort keys %o];
     my @files = ("$name.xs");
     $self->{'C'} = ["$name.c"];
+    # The next two lines to make MacPerl Happy -- dankogai via pudge
+    $self->{SOURCE} .= " $name.c"
+        if $^O eq 'MacOS' && $self->{SOURCE} !~ /\b$name\.c\b/;
     # $self->{'H'} = [$self->catfile($self->updir,'encode.h')];
     my %xs;
     foreach my $table (keys %tables) {

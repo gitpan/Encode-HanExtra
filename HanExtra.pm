@@ -1,17 +1,20 @@
 # $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #3 $ $Change: 3489 $ $DateTime: 2002/03/20 00:36:57 $
+# $Revision: #4 $ $Change: 3888 $ $DateTime: 2002/04/18 07:08:35 $
 
 package Encode::HanExtra;
-use 5.007002;
+use 5.007003;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
+use Encode;
 use XSLoader;
+XSLoader::load(__PACKAGE__, $VERSION);
 
-XSLoader::load('Encode::HanExtra',$VERSION);
-
-Encode::define_alias( qr/euc.*tw$/i		=> '"euc-tw"' );
-Encode::define_alias( qr/tw.*euc/i		=> '"euc-tw"' );
-Encode::define_alias( qr/big5-?p(lus)?/i	=> '"big5plus"' );
+Encode::define_alias( qr/\bbig5-?p(lus)?$/i	=> '"big5plus"' );
+Encode::define_alias( qr/\bbig5\+$/i		=> '"big5plus"' );
+Encode::define_alias( qr/\bcccii$/i		=> '"cccii"' );
+Encode::define_alias( qr/\beuc.*tw$/i		=> '"euc-tw"' );
+Encode::define_alias( qr/\btw.*euc$/i		=> '"euc-tw"' );
+Encode::define_alias( qr/\bGB[-_ ]?18030/i	=> '"gb18030"' );
 
 1;
 
@@ -23,12 +26,12 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.03 of Encode::HanExtra, released
-March 20, 2002.
+This document describes version 0.04 of Encode::HanExtra, released
+April 18, 2002.
 
 =head1 SYNOPSIS
 
-    use Encode qw/encode decode/; 
+    use Encode;
 
     # Traditional Chinese
     $euc_tw = encode("euc-tw", $utf8);   # loads Encode::HanExtra implicitly
@@ -57,17 +60,30 @@ already.
 
 This version includes the following encoding tables:
 
-  Canonical   Alias		Description
+  Canonical   Alias			Description
   --------------------------------------------------------------------
-  euc-tw      /euc.*tw$/i	EUC (Extended Unix Character)
-	      /tw.*euc$/i
-  gb18030                       GBK extension with Traditional characters
-  big5plus    /big5-?p(lus)?$/i	CMEX's extended Big5
-
+  big5plus    /\bbig5-?p(lus)?$/i	CMEX's extended Big5
+	      /\bbig5\+$/i	
+  cccii       /\bcccii$/i		Chinese Character Code for
+					Information Interchange
+  euc-tw      /\beuc.*tw$/i		EUC (Extended Unix Character)
+	      /\btw.*euc$/i
+  gb18030     /\bGB[-_ ]?18030$/i	GBK with Traditional Characters
 
 Detailed descriptions are as follows:
 
 =over 4
+
+=item BIG5PLUS
+
+This encoding, while not heavily used, is an attempt to bring all Taiwan's
+conflicting internal-use encodings together, and fit it as an extension to
+the widely-deployed Big5 range.
+
+=item CCCII
+
+The earliest Traditional Chinese encoding, a three-byte raw character map
+made in 1980, used mostly in library systems.
 
 =item EUC-TW
 
@@ -80,12 +96,6 @@ An extension to GBK, this encoding lists most Han characters (both simplified
 and traditional), as well as some other encodings used by other peoples in
 China.
 
-=item BIG5PLUS
-
-This encoding, while not heavily used, is an attempt to bring all Taiwan's
-conflicting internal-use encodings together, and fit it as an extension to
-the widely-deployed Big5 range.
-
 =back
 
 =head1 NOTES
@@ -96,8 +106,7 @@ that the direct mapping via Unicode is lossy, and usually doesn't work
 at all.
 
 Please send me suggestions if you want to see the following encodings added:
-C<BIG5E>, C<BIG5-GCCS>, C<GB-GCCS>, C<CCCII>. Other suggestions are welcome,
-too.
+C<BIG5E>, C<BIG5-GCCS>, C<GB-GCCS>. Other suggestions are welcome, too.
 
 =head1 SEE ALSO
 
@@ -107,9 +116,6 @@ L<Encode>, L<Encode::HanConvert>
 
 Some of the maps here are generated from GNU libiconv's test files,
 with kind permission from Bruno Haible.
-
-The F<compile> and F<encode.h> are lifted from the B<Encode>
-distribution, which is part of the standard perl distribution.
 
 Map for C<BIG5PLUS> is generated from the F<BIG52UCS.TXT> file,
 courtesy of CMEX Taiwan (L<http://wcmex.org.tw/>).

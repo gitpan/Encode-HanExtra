@@ -1,12 +1,11 @@
 Changes
-Encode/big5plus.ucm
-Encode/euc-tw.ucm
-Encode/gb18030.ucm
 HanExtra.pm
 MANIFEST			This list of files
 Makefile.PL
 README
-compile
-encode.h
+big5plus.ucm
+cccii.ucm
+euc-tw.ucm
+gb18030.ucm
 t/1-basic.t
 t/2-alias.t

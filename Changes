@@ -1,4 +1,43 @@
 ____________________________________________________________________________
+[  3890] By: autrijus                              on 2002/04/18  07:11:01
+        Log: * This be Encode::HanExtra, version 0.04.
+	   ! README
+____________________________________________________________________________
+[  3889] By: autrijus                              on 2002/04/18  07:10:01
+        Log: * update tests.
+             * clean up readme.
+	   - Encode/README
+	   ! t/1-basic.t t/2-alias.t
+____________________________________________________________________________
+[  3888] By: autrijus                              on 2002/04/18  07:08:35
+        Log: * add cccii (from Unihan.txt).
+             * changed alias scheme to agree with Encode 1.41+.
+	   ! HanExtra.pm MANIFEST README
+____________________________________________________________________________
+[  3887] By: autrijus                              on 2002/04/18  07:07:32
+        Log: * got rid of compile/encode.h and use enc2xs.
+	   - compile encode.h
+	   ! Makefile.PL
+____________________________________________________________________________
+[  3490] By: autrijus                              on 2002/03/20  00:37:16
+        Log: * This be 0.03.
+             * add 2-alias.t to manifest.
+	   ! MANIFEST
+____________________________________________________________________________
+[  3489] By: autrijus                              on 2002/03/20  00:36:57
+        Log: * add alias akin to Encode-0.91. (thank, Dan)
+             * tests.
+	   + t/2-alias.t
+	   ! HanExtra.pm t/1-basic.t
+____________________________________________________________________________
+[  3350] By: autrijus                              on 2002/03/04  18:51:01
+        Log: * oops. missed the deadline.
+	   ! HanExtra.pm
+____________________________________________________________________________
+[  3347] By: autrijus                              on 2002/03/04  18:32:02
+        Log: * changes.
+	   ! Changes
+____________________________________________________________________________
 [  3346] By: autrijus                              on 2002/03/04  18:29:32
         Log: * Encode::HanExtra v0.02, the first coherent version.
 	   + Changes Encode/README HanExtra.pm MANIFEST Makefile.PL README

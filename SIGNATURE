@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.41.
+signed via the Module::Signature module, version 0.38.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,12 +14,12 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 05e8708705608f545cc870c203cfe1f2b408fd48 Changes
+SHA1 3ce756ccf57edfcfb7825a0f3e30a063653aa2ce Changes
 SHA1 fc274e8f50b8a689ca743b930c45882612327ce9 MANIFEST
-SHA1 710ec3821e0b72d93e2bf8ef106999f685c6c1e8 META.yml
-SHA1 9344ec86c5e80bd4f85edc8329c6df66ff891e12 Makefile.PL
+SHA1 52ffc7ebfac0ea0e5f8c2b62116c9e032e22fa79 META.yml
+SHA1 1535b8c5a7e79a5e4a34a1b8cd3db2e1f1c739c4 Makefile.PL
 SHA1 79d46c63ea57147b9b571dbd0f410ab95ccdf76b README
-SHA1 5568b814428bf069c901926794ec98a0f3e08f47 lib/Encode/HanExtra.pm
+SHA1 a994e3b502e693617ab61b02b85d83a8189f0576 lib/Encode/HanExtra.pm
 SHA1 4686bb7a0f1f73089ac3f2b7264745430f925600 lib/Encode/TW/Unisys/SOSI1.pm
 SHA1 0450a0ef1d4897a0f8b29ec8a4f05fe955d6e8ab lib/Encode/TW/Unisys/SOSI2.pm
 SHA1 1a20d7e9976365a84485b5c51b4f459a18ea5d5f t/1-basic.t
@@ -40,9 +40,9 @@ SHA1 7872ff8ada7de9e3f7f2c819573b6a3dd5ece5a2 ucm/euc-tw.ucm
 SHA1 5ef0a2bf6d3335d1faa26d277f9f19f49d99e27f ucm/gb18030.ucm
 SHA1 8b81ac96892adf5a1a25e9c14991e4ac80288dff ucm/unisys.ucm
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (FreeBSD)
+Version: GnuPG v1.2.3 (FreeBSD)
 
-iD8DBQFBnN1VtLPdNzw1AaARAvbQAJ9yAJWp395jQ2i7TEPW0jyQmeSuYwCfX6lM
-qZH5V7kWVXo0L1Rm5yr4WdU=
-=LnA1
+iD8DBQFBqh+ptLPdNzw1AaARAkpEAJ0RmoS8WdR6gtrOnnB/6PJASvuCqgCfaCsv
+MrRoslF58ZS86MAzdmBQM90=
+=5gSM
 -----END PGP SIGNATURE-----

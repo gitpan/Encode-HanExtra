@@ -1,3 +1,9 @@
+[Changes for 0.10 - 2004-11-29]
+
+* Probe "enc2xs.bat" by default, in addition to "enc2xs".
+
+* Work around heap size problems with Visual C++.
+
 [Changes for 0.09 - 2004-11-19]
 
 * Added the "big5-1984" encoding, supplied by imacat.

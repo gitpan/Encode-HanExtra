@@ -1,4 +1,6 @@
 #!/usr/bin/perl -w
+# $File: //member/autrijus/Encode-HanExtra/t/1-basic.t $ $Author: autrijus $
+# $Revision: #2 $ $Change: 3489 $ $DateTime: 2002/03/20 00:36:57 $
 
 use strict;
 use Test::More tests => 5;

@@ -1,13 +1,17 @@
 # $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #1 $ $Change: 3346 $ $DateTime: 2002/03/04 18:29:32 $
+# $Revision: #3 $ $Change: 3489 $ $DateTime: 2002/03/20 00:36:57 $
 
 package Encode::HanExtra;
 use 5.007002;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use XSLoader;
 
 XSLoader::load('Encode::HanExtra',$VERSION);
+
+Encode::define_alias( qr/euc.*tw$/i		=> '"euc-tw"' );
+Encode::define_alias( qr/tw.*euc/i		=> '"euc-tw"' );
+Encode::define_alias( qr/big5-?p(lus)?/i	=> '"big5plus"' );
 
 1;
 
@@ -19,18 +23,20 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.02 of Encode::HanExtra, released
-March 5, 2002.
+This document describes version 0.03 of Encode::HanExtra, released
+March 20, 2002.
 
 =head1 SYNOPSIS
 
+    use Encode qw/encode decode/; 
+
     # Traditional Chinese
-    use Encode::TW; # needs perl 5.7.2 or better
-    use encoding 'euc-tw'; # or 'big5plus'
+    $euc_tw = encode("euc-tw", $utf8);   # loads Encode::HanExtra implicitly
+    $utf8   = decode("euc-tw", $euc_tw); # ditto
 
     # Simplified Chinese
-    use Encode::CN;
-    use encoding 'gb18030';
+    $gb18030 = encode("gb18030", $utf8);    # loads Encode::HanExtra implicitly
+    $utf8    = decode("gb18030", $gb18030); # ditto
 
 =head1 DESCRIPTION
 
@@ -42,7 +48,7 @@ However, the numbers of Chinese encodings are staggering, and a complete
 coverage will easily increase the size of perl distribution by several
 megabytes; hence, this CPAN module tries to provide the rest of them.
 
-After installing this module, L<Encode::CN> and L<Encode::TW> will
+If you are using perl 5.8 or better, L<Encode::CN> and L<Encode::TW> will
 automatically load the extra encodings for you, so there's no need to
 explicitly write C<use Encode::HanExtra> if you are using one of them
 already.
@@ -50,6 +56,16 @@ already.
 =head1 ENCODINGS
 
 This version includes the following encoding tables:
+
+  Canonical   Alias		Description
+  --------------------------------------------------------------------
+  euc-tw      /euc.*tw$/i	EUC (Extended Unix Character)
+	      /tw.*euc$/i
+  gb18030                       GBK extension with Traditional characters
+  big5plus    /big5-?p(lus)?$/i	CMEX's extended Big5
+
+
+Detailed descriptions are as follows:
 
 =over 4
 

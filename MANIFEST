@@ -9,3 +9,4 @@ README
 compile
 encode.h
 t/1-basic.t
+t/2-alias.t

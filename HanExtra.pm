@@ -1,10 +1,10 @@
 # $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #1 $ $Change: 1 $ $DateTime: 2002/06/11 08:35:12 $
+# $Revision: #4 $ $Change: 5948 $ $DateTime: 2003/05/18 21:09:04 $
 
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -36,8 +36,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.07 of Encode::HanExtra, released
-June 3, 2002.
+This document describes version 0.08 of Encode::HanExtra, released
+May 19, 2002.
 
 =head1 SYNOPSIS
 
@@ -89,6 +89,8 @@ This version includes the following encoding tables:
 	      /\btw.*euc$/i
   gb18030     /\bGB[-_ ]?18030$/i		GBK with Traditional Characters
   unisys      /\bunisys$/i			Unisys Traditional Chinese
+  unisys-sosi1					Unisys SOSI1 transport encoding
+  unisys-sosi2					Unisys SOSI2 transport encoding
 
 Detailed descriptions are as follows:
 
@@ -128,6 +130,10 @@ An extension to GBK, this encoding lists most Han characters (both simplified
 and traditional), as well as some other encodings used by other peoples in
 China.
 
+=item UNISYS
+
+Unisys System's internal Chinese mapping.
+
 =back
 
 =head1 NOTES
@@ -151,7 +157,8 @@ Some of the maps here are generated from GNU libiconv's test files,
 with kind permission from Bruno Haible.
 
 Map for C<BIG5PLUS> is generated from the F<BIG52UCS.TXT> file,
-courtesy of CMEX Taiwan (L<http://wcmex.org.tw/>).
+courtesy of CMEX Taiwan (Chinese Microcomputer Extended Foundation,
+L<http://www.cmex.org.tw/>).
 
 =head1 AUTHORS
 
@@ -159,7 +166,7 @@ Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2002 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Copyright 2002, 2003 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
 
 This program is free software; you can redistribute it and/or 
 modify it under the same terms as Perl itself.

@@ -20,6 +20,20 @@ my %tables = (
     ],
 );
 
+unless ($ENV{AGGREGATE_TABLES}){
+    my @ucm;
+    for my $k (keys %tables){
+        push @ucm, @{$tables{$k}};
+    }
+    %tables = ();
+    my $seq = 0;
+    for my $ucm (sort @ucm){
+        # 8.3 compliance !
+        my $t = sprintf ("%s_%02d_t", substr($ucm, 0, 2), $seq++);
+        $tables{$t} = [ $ucm ];
+    }
+}
+
 # add 'enc2xs -C' to the 'install' target
 END {
     local $/;

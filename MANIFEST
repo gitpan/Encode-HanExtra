@@ -3,6 +3,7 @@ HanExtra.pm
 MANIFEST			This list of files
 Makefile.PL
 README
+SIGNATURE
 big5ext.ucm
 big5plus.ucm
 cccii.ucm
@@ -21,3 +22,4 @@ lib/Encode/TW/Unisys/SOSI2.pm
 t/1-basic.t
 t/2-alias.t
 unisys.ucm
+META.yml                                Module meta-data in YAML

@@ -4,7 +4,7 @@
 # Thu Apr 18 10:45:35 2002
 #
 # Then Edited by Dan Kogai
-# and finially by Autrijus Tang
+# and finally by Autrijus Tang
 #
 use 5.007003;
 use strict;
@@ -15,7 +15,7 @@ use ExtUtils::MakeMaker;
 my $name = 'HanExtra';
 my %tables = (
     HanExtra_t => [
-	qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm),
+	qw(big5ext.ucm big5plus.ucm cccii.ucm euc-tw.ucm gb18030.ucm unisys.ucm),
 	map "cns11643-$_.ucm", (1 .. 7, 'f'),
     ],
 );

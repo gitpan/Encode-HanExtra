@@ -1,10 +1,10 @@
 # $File: //member/autrijus/Encode-HanExtra/HanExtra.pm $ $Author: autrijus $
-# $Revision: #6 $ $Change: 3935 $ $DateTime: 2002/04/21 06:53:00 $
+# $Revision: #1 $ $Change: 1 $ $DateTime: 2002/06/11 08:35:12 $
 
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -13,6 +13,7 @@ Encode::define_alias( qr/\b(?:cmex-)?big5-?e(?:xt)?$/i	=> '"big5ext"' );
 Encode::define_alias( qr/\b(?:cmex-)?big5-?p(?:lus)?$/i	=> '"big5plus"' );
 Encode::define_alias( qr/\b(?:cmex-)?big5\+$/i		=> '"big5plus"' );
 Encode::define_alias( qr/\b(?:ccag-)?cccii$/i		=> '"cccii"' );
+Encode::define_alias( qr/\bunisys$/i		=> '"unisys"' );
 Encode::define_alias( qr/\beuc.*tw$/i		=> '"euc-tw"' );
 Encode::define_alias( qr/\btw.*euc$/i		=> '"euc-tw"' );
 Encode::define_alias( qr/\bGB[-_ ]?18030/i	=> '"gb18030"' );
@@ -35,7 +36,7 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.06 of Encode::HanExtra, released
+This document describes version 0.07 of Encode::HanExtra, released
 June 3, 2002.
 
 =head1 SYNOPSIS
@@ -87,6 +88,7 @@ This version includes the following encoding tables:
   euc-tw      /\beuc.*tw$/i			EUC (Extended Unix Character)
 	      /\btw.*euc$/i
   gb18030     /\bGB[-_ ]?18030$/i		GBK with Traditional Characters
+  unisys      /\bunisys$/i			Unisys Traditional Chinese
 
 Detailed descriptions are as follows:
 

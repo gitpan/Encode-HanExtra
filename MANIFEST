@@ -16,5 +16,8 @@ cns11643-7.ucm
 cns11643-f.ucm
 euc-tw.ucm
 gb18030.ucm
+lib/Encode/TW/Unisys/SOSI1.pm
+lib/Encode/TW/Unisys/SOSI2.pm
 t/1-basic.t
 t/2-alias.t
+unisys.ucm

@@ -1,5 +1,5 @@
 # $File: //member/autrijus/Encode-HanExtra/README $ $Author: autrijus $
-# $Revision: #3 $ $Change: 3890 $ $DateTime: 2002/04/18 07:11:01 $
+# $Revision: #1 $ $Change: 1 $ $DateTime: 2002/06/11 08:35:12 $
 
 This is the README file for Encode::HanExtra, a supplementary pack
 of additional Chinese encodings to Encode.pm.

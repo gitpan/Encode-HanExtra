@@ -1,3 +1,8 @@
+[Changes for 0.21 - 2007-08-22]
+
+* Oops, the CCCII map was broken.  So sowwy. :-/
+  Reported by: CPAN Testers.
+
 [Changes for 0.20 - 2007-08-21]
 
 * LICENSING CHANGE: This compilation and all individual files in it

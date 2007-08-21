@@ -12,11 +12,9 @@ use Config;
 my $name   = 'HanExtra';
 my %tables = (
     HanExtra_t => [
-        map "ucm/$_.ucm",
-        (
+        map "ucm/$_.ucm", (
             qw(big5-1984 big5ext big5plus cccii euc-tw gb18030 unisys),
-            map "cns11643-$_",
-            (1 .. 7, 'f')
+            map "cns11643-$_", (1 .. 7, 'f')
         )
     ],
 );

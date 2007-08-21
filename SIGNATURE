@@ -14,10 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 2ab8466abb9dec2b22ecdc0cf77ffc310194a128 Changes
+SHA1 8d3b1f91d7cd950cb622a1fb9c10bb3c1d1ba239 Changes
 SHA1 87705237a924b6a0cbbccf3a7dbfd99e447fab46 MANIFEST
-SHA1 98eb429b10c523023360565b2f7ad1e7dc7de5fa META.yml
-SHA1 0282dcc918e5e9fe6723b174ecf069940cdfb6ec Makefile.PL
+SHA1 97cd10d92cd133815430c494f5f873d3173c43b5 META.yml
+SHA1 3ec29cdae3565ae4073b9ad62fd5a161e7a3d53d Makefile.PL
 SHA1 34aefbf1f5cd0881fddd58f11c66a155f679a0ed README
 SHA1 78edb89a439463e44c33a72bbee84c54d0dc8aaf inc/Module/Install.pm
 SHA1 8ea4e37df83fd0c1c050be5c8da75545c3828d9b inc/Module/Install/Base.pm
@@ -28,15 +28,15 @@ SHA1 2054450e1e9c1dd8056362bf4a64ae70d5d71476 inc/Module/Install/Makefile.pm
 SHA1 5d6189b2cad15cf9932a28faafd55130c8247e83 inc/Module/Install/Metadata.pm
 SHA1 02af973fae2ac3531fa6b704574b2b8cb2a08148 inc/Module/Install/Win32.pm
 SHA1 3a2eab96e91cca8d99938cda7791759ae9d97b3a inc/Module/Install/WriteAll.pm
-SHA1 8ee9cf8c803d7aea6fa6dff99726d9f2a5ba1565 lib/Encode/HanExtra.pm
+SHA1 2084927c7742234418bf9077ca6db3a8a0d7003a lib/Encode/HanExtra.pm
 SHA1 50b4e3fdad3f56466b58f142355f3a04da4df5f1 lib/Encode/TW/Unisys/SOSI1.pm
 SHA1 19b3018f2b57e7e85169a859f967d36c8a7ffdbd lib/Encode/TW/Unisys/SOSI2.pm
-SHA1 1a20d7e9976365a84485b5c51b4f459a18ea5d5f t/1-basic.t
+SHA1 b5a72e5ab298a35131765ed403a85f06d2b921d8 t/1-basic.t
 SHA1 7a25e52defeb1b514f1a3668bbc9b20935f5ad57 t/2-alias.t
 SHA1 643f62ce6c366afcb2f1790ec22a6bab5f5dd6bf ucm/big5-1984.ucm
 SHA1 18444cd13aa88dac5e42f37a06d91f447d44fa34 ucm/big5ext.ucm
 SHA1 e656324f141bc0f7412cfd777d9833d24f6df52b ucm/big5plus.ucm
-SHA1 b0d59152b3a4fd8cf7abcfaadf4e2977819908ec ucm/cccii.ucm
+SHA1 4de2e48e41db737ce661f81adc7f3fd290da48e8 ucm/cccii.ucm
 SHA1 7694afeb05a43701a683b3f98c579a42e39d9dce ucm/cns11643-1.ucm
 SHA1 21a63165e918f9367db55d318681fb56f69e040c ucm/cns11643-2.ucm
 SHA1 7e9b32ae6de8a2cda09bb68f140b345d35d7fb07 ucm/cns11643-3.ucm
@@ -51,7 +51,7 @@ SHA1 8b81ac96892adf5a1a25e9c14991e4ac80288dff ucm/unisys.ucm
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.3 (Darwin)
 
-iD8DBQFGysmTtLPdNzw1AaARAlUrAJ9SWSw1dZYemrGtGUBPduW/qVLvmgCgtc9U
-bIWWRX9jv/BSCnJOAI+lIlA=
-=RjXm
+iD8DBQFGy3H9tLPdNzw1AaARAhGFAJ9R9Y7JXNrtrTvwqSnJn/EiT3sAwQCgmy8p
+nLlsFyaKXg42tLW7DR0j6tU=
+=/wqj
 -----END PGP SIGNATURE-----

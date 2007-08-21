@@ -1,7 +1,7 @@
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -34,8 +34,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.20 of Encode::HanExtra, released
-August 21, 2007.
+This document describes version 0.21 of Encode::HanExtra, released
+August 22, 2007.
 
 =head1 SYNOPSIS
 

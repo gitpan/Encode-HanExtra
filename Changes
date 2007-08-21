@@ -1,3 +1,15 @@
+[Changes for 0.20 - 2007-08-21]
+
+* LICENSING CHANGE: This compilation and all individual files in it
+  are now under the permissive "MIT" license.  See the COPYRIGHT
+  section in README for the new terms.
+
+* CCCII: Revised, using table supplied by the Koha Taiwan project.
+
+* GB18030: Removed invalid Unicode codepoints.
+
+* Build system upgraded from ExtUtils::MakeMaker to Module::Install.
+ 
 [Changes for 0.10 - 2004-11-29]
 
 * Probe "enc2xs.bat" by default, in addition to "enc2xs".

@@ -3,7 +3,7 @@ package Encode::TW::Unisys::SOSI2;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = do { my @r = (q$Revision: #1 $ =~ /\d+/g); sprintf "%d."."%02d" x $#r, @r };
+$VERSION = '0.01';
 
 use Encode ();
 
@@ -40,6 +40,6 @@ __END__
 
 =head1 NAME
 
-Encode::Unisys::SOSI1
+Encode::Unisys::SOSI2
 
 =cut

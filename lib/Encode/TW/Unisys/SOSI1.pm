@@ -3,7 +3,7 @@ package Encode::TW::Unisys::SOSI1;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = do { my @r = (q$Revision: #1 $ =~ /\d+/g); sprintf "%d."."%02d" x $#r, @r };
+$VERSION = '0.01';
 
 use Encode ();
 

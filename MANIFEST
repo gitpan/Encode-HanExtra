@@ -19,6 +19,7 @@ SIGNATURE
 t/1-basic.t
 t/2-alias.t
 ucm/big5-1984.ucm
+ucm/big5-2003.ucm
 ucm/big5ext.ucm
 ucm/big5plus.ucm
 ucm/cccii.ucm

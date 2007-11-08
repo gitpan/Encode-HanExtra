@@ -1,3 +1,8 @@
+[Changes for 0.22 - 2007-11-08]
+
+* Add Big5-2003, the newest incarnation of Big5 and a Taiwanese national
+  standard (as an appendix to CNS11643).
+
 [Changes for 0.21 - 2007-08-22]
 
 * Oops, the CCCII map was broken.  So sowwy. :-/

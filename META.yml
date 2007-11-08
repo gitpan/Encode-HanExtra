@@ -15,14 +15,14 @@ no_index:
 provides: 
   Encode::HanExtra: 
     file: lib/Encode/HanExtra.pm
-    version: 0.21
+    version: 0.22
   Encode::TW::Unisys::SOSI1: 
     file: lib/Encode/TW/Unisys/SOSI1.pm
-    version: 0.01
+    version: 1.01
   Encode::TW::Unisys::SOSI2: 
     file: lib/Encode/TW/Unisys/SOSI2.pm
-    version: 0.01
+    version: 1.01
 requires: 
   Encode: 1.41
   perl: 5.7.3
-version: 0.21
+version: 0.22

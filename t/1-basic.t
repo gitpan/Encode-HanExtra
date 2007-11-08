@@ -6,7 +6,7 @@ use Test::More tests => 16;
 use_ok('Encode');
 use_ok('Encode::HanExtra');
 
-my $char = chr 0x4EBA; # 'Human' in Chinese
+my $char = chr(20154); # 'Human' in Chinese
 
 is_code('big5-1984'   => "\xA4\x48");
 is_code(big5ext       => "\xA4\x48");

@@ -3,7 +3,7 @@ package Encode::TW::Unisys::SOSI2;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '0.01';
+$VERSION = '1.01';
 
 use Encode ();
 

@@ -1,28 +1,29 @@
 package Encode::HanExtra;
 use 5.007003;
 
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 use Encode;
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
-Encode::define_alias( qr/\b(?:tca-)?big5-?(?:19)?84?$/i => '"big5-1984"'  ); 
-Encode::define_alias( qr/\b(?:cmex-)?big5-?e(?:xt)?$/i  => '"big5ext"'    ); 
-Encode::define_alias( qr/\b(?:cmex-)?big5-?p(?:lus)?$/i => '"big5plus"'   ); 
-Encode::define_alias( qr/\b(?:cmex-)?big5\+$/i          => '"big5plus"'   ); 
-Encode::define_alias( qr/\b(?:ccag-)?cccii$/i           => '"cccii"'      ); 
-Encode::define_alias( qr/\bunisys$/i                    => '"unisys"'     ); 
-Encode::define_alias( qr/\beuc.*tw$/i                   => '"euc-tw"'     ); 
-Encode::define_alias( qr/\btw.*euc$/i                   => '"euc-tw"'     ); 
-Encode::define_alias( qr/\bGB[-_ ]?18030/i              => '"gb18030"'    ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]1/i        => '"cns11643-1"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]2/i        => '"cns11643-2"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]3/i        => '"cns11643-3"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]4/i        => '"cns11643-4"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]5/i        => '"cns11643-5"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]6/i        => '"cns11643-6"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]7/i        => '"cns11643-7"' ); 
-Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]f/i        => '"cns11643-f"' ); 
+Encode::define_alias( qr/\b(?:tca-)?big5-?(?:19)?84?$/i  => '"big5-1984"'  );
+Encode::define_alias( qr/\b(?:cmex-)?big5-?(?:20)?03?$/i => '"big5-2003"'  );
+Encode::define_alias( qr/\b(?:cmex-)?big5-?e(?:xt)?$/i   => '"big5ext"'    );
+Encode::define_alias( qr/\b(?:cmex-)?big5-?p(?:lus)?$/i  => '"big5plus"'   );
+Encode::define_alias( qr/\b(?:cmex-)?big5\+$/i           => '"big5plus"'   );
+Encode::define_alias( qr/\b(?:ccag-)?cccii$/i            => '"cccii"'      );
+Encode::define_alias( qr/\bunisys$/i                     => '"unisys"'     );
+Encode::define_alias( qr/\beuc.*tw$/i                    => '"euc-tw"'     );
+Encode::define_alias( qr/\btw.*euc$/i                    => '"euc-tw"'     );
+Encode::define_alias( qr/\bGB[-_ ]?18030/i               => '"gb18030"'    );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]1/i         => '"cns11643-1"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]2/i         => '"cns11643-2"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]3/i         => '"cns11643-3"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]4/i         => '"cns11643-4"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]5/i         => '"cns11643-5"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]6/i         => '"cns11643-6"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]7/i         => '"cns11643-7"' );
+Encode::define_alias( qr/\bCNS[-_ ]?11643[-_]f/i         => '"cns11643-f"' );
 
 1;
 
@@ -34,8 +35,8 @@ Encode::HanExtra - Extra sets of Chinese encodings
 
 =head1 VERSION
 
-This document describes version 0.21 of Encode::HanExtra, released
-August 22, 2007.
+This document describes version 0.22 of Encode::HanExtra, released
+November 8, 2007.
 
 =head1 SYNOPSIS
 
@@ -72,6 +73,7 @@ This version includes the following encoding tables:
   Canonical   Alias                             Description
   -----------------------------------------------------------------------------
   big5-1984   /\b(tca-)?big5-?(19)?84$/i        TCA's original Big5-1984
+  big5-2003   /\b(cmex-)?big5-?(20)?03$/i       Big5-2003 (national standard)
   big5ext     /\b(cmex-)?big5-?e(xt)?$/i        CMEX's Big5e Extension
   big5plus    /\b(cmex-)?big5-?p(lus)?$/i       CMEX's Big5+ Extension
               /\b(cmex-)?big5\+$/i
@@ -99,6 +101,10 @@ Detailed descriptions are as follows:
 =item BIG5-1984
 
 This is the original Big5 encoding made by TCA Taiwan.
+
+=item BIG5-2003
+
+This revised encoding is now national standard, as an appendix of CNS11643.
 
 =item BIG5PLUS
 

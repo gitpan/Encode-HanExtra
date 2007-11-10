@@ -16,6 +16,7 @@ MANIFEST			This list of files
 META.yml
 README
 SIGNATURE
+t/0-signature.t
 t/1-basic.t
 t/2-alias.t
 ucm/big5-1984.ucm

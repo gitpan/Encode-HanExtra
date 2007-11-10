@@ -1,3 +1,9 @@
+[Changes for 0.23 - 2007-11-10]
+
+* Split .ucm files into several object files, so enc2xs will no longer
+  take absurd amount of memory.
+  Reported by: David Cantrell
+
 [Changes for 0.22 - 2007-11-08]
 
 * Add Big5-2003, the newest incarnation of Big5 and a Taiwanese national

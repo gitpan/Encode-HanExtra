@@ -2,8 +2,8 @@ NAME
     Encode::HanExtra - Extra sets of Chinese encodings
 
 VERSION
-    This document describes version 0.20 of Encode::HanExtra, released
-    August 21, 2007.
+    This document describes version 0.23 of Encode::HanExtra, released
+    November 10, 2007.
 
 SYNOPSIS
         use Encode;
@@ -37,6 +37,7 @@ ENCODINGS
       Canonical   Alias                             Description
       -----------------------------------------------------------------------------
       big5-1984   /\b(tca-)?big5-?(19)?84$/i        TCA's original Big5-1984
+      big5-2003   /\b(cmex-)?big5-?(20)?03$/i       Big5-2003 (national standard)
       big5ext     /\b(cmex-)?big5-?e(xt)?$/i        CMEX's Big5e Extension
       big5plus    /\b(cmex-)?big5-?p(lus)?$/i       CMEX's Big5+ Extension
                   /\b(cmex-)?big5\+$/i
@@ -61,6 +62,10 @@ ENCODINGS
 
     BIG5-1984
         This is the original Big5 encoding made by TCA Taiwan.
+
+    BIG5-2003
+        This revised encoding is now national standard, as an appendix of
+        CNS11643.
 
     BIG5PLUS
         This encoding, while not heavily used, is an attempt to bring all

@@ -11,13 +11,23 @@ use Config;
 # Please edit the following to the taste!
 my $name   = 'HanExtra';
 my %tables = (
-    HanExtra_t => [
-        map "ucm/$_.ucm",
-        (
-            qw(big5-1984 big5-2003 big5ext big5plus cccii euc-tw gb18030 unisys),
-            map "cns11643-$_",
-            (1 .. 7, 'f')
-        )
+    CNS11643_t => [
+        map "ucm/$_.ucm", map "cns11643-$_", (1 .. 7, 'f')
+    ],
+    Big5_t      => [
+        map "ucm/$_.ucm", qw( big5-1984 big5-2003 big5ext big5plus )
+    ],
+    CCCII_t     => [
+        map "ucm/$_.ucm", qw( cccii )
+    ],
+    EUC_TW_t    => [
+        map "ucm/$_.ucm", qw( euc-tw )
+    ],
+    GB18030_t   => [
+        map "ucm/$_.ucm", qw( gb18030 )
+    ],
+    Unisys_t    => [
+        map "ucm/$_.ucm", qw( unisys )
     ],
 );
 
